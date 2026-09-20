@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+
+  --color-navy: #0b2140;
+  --color-navy-deep: #07162c;
+  --color-navy-soft: #1a3a66;
+  --color-ink: #1c2430;
+  --color-paper: #f3efe6;
+  --color-paper-2: #e8e2d6;
+  --color-cream: #fffaf2;
+  --color-gold: #c9a35a;
+  --color-gold-deep: #9a7630;
+  --color-gold-soft: #e8d7a8;
+  --color-rose: #b85a72;
+  --color-rose-soft: #f3dbe2;
+  --color-teal: #2f7d74;
+  --color-teal-soft: #d7ece8;
+  --color-sky: #3d7a9a;
+  --color-sky-soft: #d5e6f0;
+  --color-violet: #5c4d86;
+  --color-violet-soft: #e6e0f2;
+  --color-muted: #5c6570;
+  --color-line: #d4cec2;
+  --color-danger: #9b3b3b;
+  --color-ok: #2f6b46;
+
+  --color-background: #f3efe6;
+  --color-foreground: #1c2430;
+  --color-primary: #0b2140;
+  --color-primary-foreground: #fffaf2;
+  --color-card: #fffaf2;
+  --color-border: #d4cec2;
+  --color-muted-foreground: #5c6570;
+  --color-accent: #c9a35a;
+  --color-accent-foreground: #0b2140;
+  --color-destructive: #9b3b3b;
+  --color-ring: #c9a35a;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.fei-shadow {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-ink) 8%, transparent),
+    0 1px 2px color-mix(in oklab, var(--color-navy) 6%, transparent),
+    0 8px 24px color-mix(in oklab, var(--color-navy) 7%, transparent);
+}
+
+.stagger-in > * {
+  animation: rise-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.stagger-in > *:nth-child(1) { animation-delay: 40ms; }
+.stagger-in > *:nth-child(2) { animation-delay: 90ms; }
+.stagger-in > *:nth-child(3) { animation-delay: 140ms; }
+.stagger-in > *:nth-child(4) { animation-delay: 190ms; }
+.stagger-in > *:nth-child(5) { animation-delay: 240ms; }
+.stagger-in > *:nth-child(6) { animation-delay: 290ms; }
+.stagger-in > *:nth-child(7) { animation-delay: 340ms; }
+.stagger-in > *:nth-child(8) { animation-delay: 390ms; }
+.stagger-in > *:nth-child(9) { animation-delay: 440ms; }
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(0.72);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.breath-orb {
+  animation: breathe 8s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
