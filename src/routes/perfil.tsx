@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef } from "react";
 import { toast } from "sonner";
 import { PageHeader } from "@/components/page-header";
@@ -191,6 +191,9 @@ function ProfilePage() {
           <p className="text-sm text-muted mt-2">{t("forWhom")}</p>
           <p className="text-sm text-muted mt-2">{t("authors")}</p>
           <p className="text-sm text-gold-deep mt-3">{t("vision")}</p>
+          <Link to="/guia" className="inline-flex mt-4">
+            <Button variant="outline">{t("guide")}</Button>
+          </Link>
         </section>
       </div>
     </main>

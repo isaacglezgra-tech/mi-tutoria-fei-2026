@@ -5,6 +5,7 @@ import {
   Calendar,
   CalendarDays,
   CheckSquare,
+  Compass,
   Heart,
   LifeBuoy,
   Target,
@@ -93,6 +94,19 @@ function Home() {
 
       <section className="px-4 -mt-5 pb-8">
         <div className="grid grid-cols-2 gap-3 stagger-in">
+          <Link
+            to="/guia"
+            className="col-span-2 bg-navy text-cream rounded-xl min-h-[118px] p-4 fei-shadow flex items-center justify-between gap-3 transition-transform active:scale-[0.98]"
+          >
+            <div className="min-w-0">
+              <Compass className="size-7 text-gold-soft" strokeWidth={1.75} />
+              <p className="font-display text-xl mt-3 leading-tight">{t("guide")}</p>
+              <p className="text-cream/70 text-sm mt-1">{t("guideCardBody")}</p>
+            </div>
+            <span className="shrink-0 text-gold-soft text-xs uppercase tracking-[0.14em] font-semibold">
+              {t("guideKicker")}
+            </span>
+          </Link>
           {tiles.map((tile) => (
             <Link
               key={tile.to}

@@ -15,7 +15,7 @@ export function PageHeader({
 }) {
   const t = useT();
   return (
-    <header className="sticky top-0 z-20 bg-paper/90 backdrop-blur-md">
+    <header className="sticky top-0 z-20 bg-paper/90 backdrop-blur-md no-print">
       <div className="flex items-center gap-2 px-4 pt-[max(0.75rem,env(safe-area-inset-top))] pb-3">
         <Link
           to="/"

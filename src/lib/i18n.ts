@@ -158,8 +158,8 @@ const catalog = {
   chihuahua: { es: "Chihuahua", en: "Chihuahua" },
   language: { es: "Idioma", en: "Language" },
   privacy: {
-    es: "Tu información se guarda solo en este dispositivo. No se envía a servidores de la FEI ni de Grok. Puedes exportarla o borrar todo cuando quieras.",
-    en: "Your information stays on this device. It is not sent to FEI or Grok servers. You can export or erase it anytime.",
+    es: "Tu información se guarda solo en este dispositivo. No se envía a servidores de la FEI. Puedes exportarla o borrar todo cuando quieras.",
+    en: "Your information stays on this device. It is not sent to FEI servers. You can export or erase it anytime.",
   },
   exportData: { es: "Exportar datos", en: "Export data" },
   importData: { es: "Importar", en: "Import" },
@@ -316,6 +316,26 @@ const catalog = {
   seeSupport: { es: "Ver apoyo", en: "See support" },
   markDone: { es: "Marcar hecho", en: "Mark done" },
   add: { es: "Agregar", en: "Add" },
+  guide: { es: "Cómo usarla", en: "How to use it" },
+  guideSubtitle: {
+    es: "Infografía y una carta a las y los tutorados",
+    en: "An infographic and a letter to mentees",
+  },
+  guideKicker: { es: "Guía rápida", en: "Quick guide" },
+  guideHero: { es: "Cómo usar Mi Tutoría FEI", en: "How to use My FEI Mentoring" },
+  guidePrivacy: {
+    es: "Todo se queda en este dispositivo. No hay cuenta. Nadie en la FEI lo ve si tú no lo compartes.",
+    en: "Everything stays on this device. No account. Nobody at FEI sees it unless you share it.",
+  },
+  infographicTitle: { es: "Infografía", en: "Infographic" },
+  letterTitle: { es: "Por qué existe esta app", en: "Why this app exists" },
+  printGuide: { es: "Imprimir o guardar PDF", en: "Print or save PDF" },
+  downloadLetter: { es: "Descargar carta", en: "Download letter" },
+  downloadInfographic: { es: "Descargar infografía", en: "Download infographic" },
+  guideCardBody: {
+    es: "Seis pasos, una infografía y una carta de Isaac. Un minuto basta.",
+    en: "Six steps, an infographic, and a letter from Isaac. One minute is enough.",
+  },
 } as const;
 
 export type MsgKey = keyof typeof catalog;

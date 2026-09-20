@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApoyoRouteImport } from './routes/apoyo'
 import { Route as BienestarRouteImport } from './routes/bienestar'
 import { Route as CalendarioRouteImport } from './routes/calendario'
+import { Route as GuiaRouteImport } from './routes/guia'
 import { Route as MetasRouteImport } from './routes/metas'
 import { Route as PendientesRouteImport } from './routes/pendientes'
 import { Route as PerfilRouteImport } from './routes/perfil'
@@ -39,6 +40,11 @@ const BienestarRoute = BienestarRouteImport.update({
 const CalendarioRoute = CalendarioRouteImport.update({
   id: '/calendario',
   path: '/calendario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiaRoute = GuiaRouteImport.update({
+  id: '/guia',
+  path: '/guia',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MetasRoute = MetasRouteImport.update({
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/apoyo': typeof ApoyoRoute
   '/bienestar': typeof BienestarRoute
   '/calendario': typeof CalendarioRoute
+  '/guia': typeof GuiaRoute
   '/metas': typeof MetasRoute
   '/pendientes': typeof PendientesRoute
   '/perfil': typeof PerfilRoute
@@ -95,6 +102,7 @@ export interface FileRoutesByTo {
   '/apoyo': typeof ApoyoRoute
   '/bienestar': typeof BienestarRoute
   '/calendario': typeof CalendarioRoute
+  '/guia': typeof GuiaRoute
   '/metas': typeof MetasRoute
   '/pendientes': typeof PendientesRoute
   '/perfil': typeof PerfilRoute
@@ -109,6 +117,7 @@ export interface FileRoutesById {
   '/apoyo': typeof ApoyoRoute
   '/bienestar': typeof BienestarRoute
   '/calendario': typeof CalendarioRoute
+  '/guia': typeof GuiaRoute
   '/metas': typeof MetasRoute
   '/pendientes': typeof PendientesRoute
   '/perfil': typeof PerfilRoute
@@ -124,6 +133,7 @@ export interface FileRouteTypes {
     | '/apoyo'
     | '/bienestar'
     | '/calendario'
+    | '/guia'
     | '/metas'
     | '/pendientes'
     | '/perfil'
@@ -137,6 +147,7 @@ export interface FileRouteTypes {
     | '/apoyo'
     | '/bienestar'
     | '/calendario'
+    | '/guia'
     | '/metas'
     | '/pendientes'
     | '/perfil'
@@ -150,6 +161,7 @@ export interface FileRouteTypes {
     | '/apoyo'
     | '/bienestar'
     | '/calendario'
+    | '/guia'
     | '/metas'
     | '/pendientes'
     | '/perfil'
@@ -164,6 +176,7 @@ export interface RootRouteChildren {
   ApoyoRoute: typeof ApoyoRoute
   BienestarRoute: typeof BienestarRoute
   CalendarioRoute: typeof CalendarioRoute
+  GuiaRoute: typeof GuiaRoute
   MetasRoute: typeof MetasRoute
   PendientesRoute: typeof PendientesRoute
   PerfilRoute: typeof PerfilRoute
@@ -201,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/calendario'
       fullPath: '/calendario'
       preLoaderRoute: typeof CalendarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guia': {
+      id: '/guia'
+      path: '/guia'
+      fullPath: '/guia'
+      preLoaderRoute: typeof GuiaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/metas': {
@@ -260,6 +280,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApoyoRoute: ApoyoRoute,
   BienestarRoute: BienestarRoute,
   CalendarioRoute: CalendarioRoute,
+  GuiaRoute: GuiaRoute,
   MetasRoute: MetasRoute,
   PendientesRoute: PendientesRoute,
   PerfilRoute: PerfilRoute,
