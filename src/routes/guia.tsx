@@ -93,9 +93,14 @@ function GuidePage() {
             ))}
           </div>
           <p className="mt-6 text-navy">{loc(letterMeta.signoff, lang)}</p>
-          <p className="font-display text-xl text-navy mt-1">{letterMeta.from}</p>
-          <p className="text-sm text-muted">{loc(letterMeta.role, lang)}</p>
-          <p className="text-sm text-muted">{loc(letterMeta.with, lang)}</p>
+          <div className="mt-1 space-y-0.5">
+            {letterMeta.from.map((name) => (
+              <p key={name} className="font-display text-xl text-navy leading-snug">
+                {name}
+              </p>
+            ))}
+          </div>
+          <p className="text-sm text-muted mt-1">{loc(letterMeta.role, lang)}</p>
           <p className="text-sm text-gold-deep mt-2">{letterMeta.year}</p>
           <div className="mt-5 no-print">
             <Button

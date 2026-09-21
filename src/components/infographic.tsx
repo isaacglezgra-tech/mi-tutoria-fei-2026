@@ -93,7 +93,8 @@ export function InfographicPoster() {
       <footer className="bg-navy text-cream px-5 py-4">
         <p className="text-sm text-cream/85">{t("guidePrivacy")}</p>
         <p className="font-display text-gold-soft mt-2">{t("motto")}</p>
-        <p className="text-xs text-cream/60 mt-2">{t("authors")}</p>
+        <p className="text-xs text-cream/80 mt-2 leading-relaxed">{t("authorsLine")}</p>
+        <p className="text-xs text-cream/55 mt-1">{t("feiShort")} · {t("appYear")}</p>
       </footer>
     </article>
   );

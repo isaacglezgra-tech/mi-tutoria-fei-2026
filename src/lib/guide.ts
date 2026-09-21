@@ -5,24 +5,24 @@ export const letterMeta = {
     es: "Una carta a las y los tutorados de la FEI",
     en: "A letter to FEI mentees",
   },
-  from: "Isaac González Granados",
+  from: [
+    "Olinda Ornelas Benítez",
+    "Carolina Moriel Seáñez",
+    "Isaac González Granados",
+  ],
   role: {
     es: "Facultad de Economía Internacional · UACH",
     en: "School of International Economics · UACH",
-  },
-  with: {
-    es: "Junto con Mtra. Carolina Moriel Seáñez",
-    en: "Together with Mtra. Carolina Moriel Seáñez",
   },
   signoff: { es: "Ahí nos vemos,", en: "See you around," },
   year: "2026",
 } as const;
 
-/** First-person letter in Isaac’s voice. Keep it short on purpose. */
+/** Letter in the authors’ shared voice. Keep it short on purpose. */
 export const letterParagraphs: { es: string; en: string }[] = [
   {
-    es: "Soy Isaac González Granados. Esta app la diseñamos Carolina Moriel Seáñez y yo, en la Facultad de Economía Internacional. No es un adorno digital. Es un cuaderno de tutoría que cabe en el celular.",
-    en: "I’m Isaac González Granados. Carolina Moriel Seáñez and I designed this app at the School of International Economics. It isn’t digital decoration. It’s a mentoring notebook that fits in your phone.",
+    es: "Somos Olinda Ornelas Benítez, Carolina Moriel Seáñez e Isaac González Granados. Esta app la diseñamos en la Facultad de Economía Internacional. No es un adorno digital. Es un cuaderno de tutoría que cabe en el celular.",
+    en: "We are Olinda Ornelas Benítez, Carolina Moriel Seáñez, and Isaac González Granados. We designed this app at the School of International Economics. It isn’t digital decoration. It’s a mentoring notebook that fits in your phone.",
   },
   {
     es: "¿Por qué la hicimos? Porque la tutoría en la FEI ya existe: hay cubículo, hay horario, hay ficha en SEGA. Lo que a veces falta es un lugar sencillo donde organices la semana, prepares lo que quieres platicar y no se te olvide que estudiar también es cuidarte. 2026 es el Año de la salud mental en la UACH. Nos tomamos eso en serio. Tu bienestar también forma parte de tu éxito.",
@@ -38,7 +38,7 @@ export const letterParagraphs: { es: string; en: string }[] = [
   },
   {
     es: "¿Cómo se usa? Entras. Si quieres, escribes tu nombre. No hay cuenta ni contraseña. En Perfil anotas matrícula, programa, campus y los datos de tu tutor —aparecen en SEGA, abajo de tu horario; si no están, ve a Coordinación de Tutorías. Arma Mi semana y tus Pendientes. El Calendario junta clases, entregas y la próxima tutoría. Antes de ir al cubículo, abre Mi tutoría: deja los temas, registra la sesión, anota lo que quedó. Pon una o dos metas. El rumbo importa más que la prisa. Si te nace, registra cómo te sientes. Hay pausas, respiración y, si el día pesa, un botón de apoyo con números reales: Línea de la Vida, SAPTEL, emergencias.",
-    en: "How do you use it? You go in. If you want, you write your name. There is no account or password. In Profile you add student ID, program, campus, and your mentor’s details — they appear in SEGA, at the bottom of your schedule; if they’re missing, go to Mentoring Coordination. Build My Week and your Tasks. Calendar brings together classes, deadlines, and the next mentoring session. Before you go to the office, open My Mentoring: leave the topics, log the session, note what remains. Set one or two goals. Direction matters more than speed. If it feels right, log how you feel. There are breaks, breathing, and, if the day is heavy, a support button with real numbers: Línea de la Vida, SAPTEL, emergency services.",
+    en: "How do you use it? You go in. If you want, you write your name. There is no account or password. In Profile you add student ID, program, and campus, and your mentor’s details — they appear in SEGA, at the bottom of your schedule; if they’re missing, go to Mentoring Coordination. Build My Week and your Tasks. Calendar brings together classes, deadlines, and the next mentoring session. Before you go to the office, open My Mentoring: leave the topics, log the session, note what remains. Set one or two goals. Direction matters more than speed. If it feels right, log how you feel. There are breaks, breathing, and, if the day is heavy, a support button with real numbers: Línea de la Vida, SAPTEL, emergency services.",
   },
   {
     es: "Todo se queda en este dispositivo. Puedes exportarlo o borrarlo cuando quieras. Nadie en la FEI lo ve si tú no lo compartes.",
@@ -160,9 +160,8 @@ export function letterPlain(lang: Lang): string {
     ...letterParagraphs.map((p) => loc(p, lang)),
     "",
     loc(letterMeta.signoff, lang),
-    letterMeta.from,
+    ...letterMeta.from,
     loc(letterMeta.role, lang),
-    loc(letterMeta.with, lang),
     letterMeta.year,
   ];
   return lines.join("\n");

@@ -170,8 +170,12 @@ const catalog = {
   },
   about: { es: "Acerca de", en: "About" },
   authors: {
-    es: "Diseño y autoría: Mtro. Isaac González Granados y Mtra. Carolina Moriel Seáñez. Facultad de Economía Internacional, Universidad Autónoma de Chihuahua, 2026.",
-    en: "Designed by Mtro. Isaac González Granados and Mtra. Carolina Moriel Seáñez. School of International Economics, Universidad Autónoma de Chihuahua, 2026.",
+    es: "Diseño y autoría: Mtra. Olinda Ornelas Benítez, Mtra. Carolina Moriel Seáñez y Mtro. Isaac González Granados. Facultad de Economía Internacional, Universidad Autónoma de Chihuahua, 2026.",
+    en: "Designed by Mtra. Olinda Ornelas Benítez, Mtra. Carolina Moriel Seáñez, and Mtro. Isaac González Granados. School of International Economics, Universidad Autónoma de Chihuahua, 2026.",
+  },
+  authorsLine: {
+    es: "Olinda Ornelas Benítez · Carolina Moriel Seáñez · Isaac González Granados",
+    en: "Olinda Ornelas Benítez · Carolina Moriel Seáñez · Isaac González Granados",
   },
   forWhom: {
     es: "Para estudiantes tutorados de la Facultad de Economía Internacional.",
@@ -333,8 +337,8 @@ const catalog = {
   downloadLetter: { es: "Descargar carta", en: "Download letter" },
   downloadInfographic: { es: "Descargar infografía", en: "Download infographic" },
   guideCardBody: {
-    es: "Seis pasos, una infografía y una carta de Isaac. Un minuto basta.",
-    en: "Six steps, an infographic, and a letter from Isaac. One minute is enough.",
+    es: "Seis pasos, una infografía y una carta de las autoras y el autor. Un minuto basta.",
+    en: "Six steps, an infographic, and a letter from the authors. One minute is enough.",
   },
 } as const;
 
